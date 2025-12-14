@@ -2,7 +2,7 @@ export default async function generateres(query){
     try{
     const { GoogleGenerativeAI } = await import("@google/generative-ai");
         const genAI = new GoogleGenerativeAI(process.env.GOOGLE_SECRET);
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
         
         const result = await model.generateContent([query]);
         const analysis = result.response.text();
